@@ -1,0 +1,281 @@
+/* Fuentes y Reset */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+  text-align: center;
+}
+
+body {
+  max-width: 1200px;
+  margin: auto;
+  background-color: #3b97c5;
+  font-family: "Montserrat", sans-serif;
+  color: rgb(0, 0, 0);
+}
+
+/* Header */
+header {
+  height: 96px;
+  background-color: #61a7da;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  flex-wrap: wrap;
+}
+
+header .logo h1 {
+  font-weight: 700;
+}
+
+header .logo p {
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 16px;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: #ff6f61;
+}
+
+/* Hero - Carrusel */
+.hero {
+  max-width: 1100px;
+  height: 600px;
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  background-color: #3b97c5;
+  position: relative;
+}
+
+.carousel .slides {
+  display: flex;
+  height: 100%;
+  width: 300%; /* 3 slides */
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel .slide {
+  flex: 0 0 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.carousel .slide h2 {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: 0 0 15px rgba(0,0,0,0.8);
+  z-index: 10;
+  max-width: 90%;
+  text-align: center;
+  pointer-events: none;
+}
+
+/* Botones carrusel */
+.carousel button.prev,
+.carousel button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  border: none;
+  color: white;
+  font-size: 3rem;
+  padding: 0 14px;
+  cursor: pointer;
+  user-select: none;
+  z-index: 20;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.carousel button.prev:hover,
+.carousel button.next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.carousel button.prev {
+  left: 20px;
+}
+
+.carousel button.next {
+  right: 20px;
+}
+
+/* Form Section */
+.form-section article {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color:  #517ec1;
+  border-radius: 10px;
+  box-shadow: #3b495e;
+}
+
+.form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-section label {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.form-section select {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.form-section button {
+  padding: 12px;
+  background-color: #1662d4;
+  color: white;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-section button:hover {
+  background-color: #36444e;
+}
+
+/* Regiones Section */
+.regiones {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+  padding: 0 10px;
+}
+
+.region {
+  background-color: #247287;
+  border-radius: 10px;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(35, 37, 47, 0.3);
+  padding: 15px;
+  transition: transform 0.3s ease;
+}
+
+.region:hover {
+  transform: scale(1.05);
+}
+
+.region img {
+  width: 100%;
+  border-radius: 10px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.region h4 {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+  background-color: #236a91;
+  text-align: center;
+  padding: 20px 0;
+  color: #020404;
+  font-weight: 600;
+}
+
+/* Media Queries para responsive */
+@media (max-width: 900px) {
+  .hero {
+    height: 450px;
+  }
+  .carousel .slides {
+    height: 450px;
+  }
+  .carousel .slide {
+    height: 450px;
+  }
+  .carousel .slide h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 10px 16px;
+  }
+  header nav {
+    width: 100%;
+  }
+  header nav a {
+    font-size: 18px;
+    padding: 10px 8px;
+    display: inline-block;
+  }
+  .hero {
+    height: 300px;
+  }
+  .carousel .slides {
+    height: 300px;
+  }
+  .carousel .slide {
+    height: 300px;
+  }
+  .carousel .slide h2 {
+    font-size: 1.8rem;
+  }
+  .carousel button.prev,
+  .carousel button.next {
+    font-size: 2rem;
+    padding: 0 10px;
+  }
+  .form-section article {
+    max-width: 90%;
+    margin: 30px auto;
+  }
+  .regiones {
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 10px;
+  }
+  .region {
+    width: 100%;
+  }
+}

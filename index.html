@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DondeViajo.com</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>DondeViajo.com</h1>
+            <p>Tu aventura, hecha a tu medida</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Destinos</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+<section class="hero">
+  <div class="carousel">
+    <div class="slides">
+      <article class="slide">
+        <img src="assets/img/iguazu1.png" alt="Cataratas del Iguazú" />
+        <h2>Descubrí Argentina según tu mood</h2>
+      </article>
+      <article class="slide">
+        <img src="assets/img/norte.jpg" alt="Región Norte de Argentina" />
+      </article>
+      <article class="slide">
+        <img src="assets/img/sur.jpg" alt="Región Sur de Argentina" />
+      </article>
+    </div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+</section>
+
+<h2>Descubrí Argentina según tu mood</h2>
+
+<section class="form-section">
+    <article>
+        <h3>Personaliza tu búsqueda</h3>
+        <form>
+            <label for="mood">Tu mood:</label>
+            <select id="mood">
+                <option>Relax</option>
+                <option>Aventura</option>
+            </select>
+
+            <label for="presupuesto">Presupuesto:</label>
+            <select id="presupuesto">
+                <option>Bajo</option>
+                <option>Medio</option>
+                <option>Alto</option>
+            </select>
+
+            <button type="submit">Buscar</button>
+        </form>
+    </article>
+</section>
+
+<section class="regiones">
+    <article class="region">
+        <img src="assets/img/norte.jpg" alt="Región Norte de Argentina">
+        <h4>Norte</h4>
+    </article>
+    <article class="region">
+        <img src="assets/img/centro.jpg" alt="Región Centro de Argentina">
+        <h4>Centro</h4>
+    </article>
+    <article class="region">
+        <img src="assets/img/sur.jpg" alt="Región Sur de Argentina">
+        <h4>Sur</h4>
+    </article>
+</section>
+
+    </main>
+
+    <footer>
+        <p>© 2025 DondeViajo.com</p>
+    </footer>
+
+<script>
+  const slidesContainer = document.querySelector('.carousel .slides');
+  const slides = document.querySelectorAll('.carousel .slide');
+  const prevBtn = document.querySelector('.carousel .prev');
+  const nextBtn = document.querySelector('.carousel .next');
+  let currentIndex = 0;
+  let slideInterval;
+
+  function showSlide(index) {
+    if (index < 0) {
+      currentIndex = slides.length - 1;
+    } else if (index >= slides.length) {
+      currentIndex = 0;
+    } else {
+      currentIndex = index;
+    }
+    slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+
+  function startAutoSlide() {
+    slideInterval = setInterval(() => {
+      showSlide(currentIndex + 1);
+    }, 7000); // Cambia cada 7 segundos para que no pase rápido
+  }
+
+  function stopAutoSlide() {
+    clearInterval(slideInterval);
+  }
+
+  prevBtn.addEventListener('click', () => {
+    showSlide(currentIndex - 1);
+    stopAutoSlide();
+    startAutoSlide();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    showSlide(currentIndex + 1);
+    stopAutoSlide();
+    startAutoSlide();
+  });
+
+  // Arranca el carrusel automático
+  startAutoSlide();
+</script>
+
+
+</body>
+</html>
