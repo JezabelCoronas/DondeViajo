@@ -15,118 +15,109 @@ h1, h2, h3, h4, p {
 body {
   max-width: 1200px;
   margin: auto;
-  background-color: #3b97c5;
+  background-color: #f4f8fb; /* más claro para mejor contraste */
   font-family: "Montserrat", sans-serif;
-  color: rgb(0, 0, 0);
+  color: #1c1c1c;
 }
 
 /* Header */
 header {
-  height: 96px;
+  height: auto;
   background-color: #61a7da;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 16px;
+  padding: 12px 20px;
   flex-wrap: wrap;
 }
 
 header .logo h1 {
   font-weight: 700;
+  color: white;
 }
 
 header .logo p {
   font-weight: 300;
   font-size: 0.9rem;
+  color: white;
 }
 
 header nav a {
   color: #fff;
   text-decoration: none;
-  font-size: 24px;
-  padding: 16px;
-  transition: color 0.3s ease;
+  font-size: 18px;
+  padding: 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
 }
 
 header nav a:hover {
-  color: #ff6f61;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Estilos personalizados para navbar Bootstrap */
+
+.navbar-brand h1 {
+  font-size: 1.6rem;
+  color: white;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 0;
+}
+
+.navbar-brand p {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: white;
+  margin-bottom: 0;
+}
+
+.navbar-nav .nav-link {
+  color: white !important;
+  font-weight: 500;
+  margin: 0 6px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
 }
 
 /* Hero - Carrusel */
 .hero {
   max-width: 1100px;
-  height: 600px;
+  height: auto;
   margin: 40px auto;
   overflow: hidden;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  background-color: #3b97c5;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   position: relative;
 }
 
-.carousel .slides {
-  display: flex;
-  height: 100%;
-  width: 300%; /* 3 slides */
-  transition: transform 0.5s ease-in-out;
+.carousel-inner img {
+  object-fit: cover;
+  height: 500px;
 }
 
-.carousel .slide {
-  flex: 0 0 100%;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@media (max-width: 900px) {
+  .carousel-inner img {
+    height: 350px;
+  }
 }
 
+@media (max-width: 600px) {
+  .carousel-inner img {
+    height: 250px;
+  }
+}
 
-.carousel .slide h2 {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  font-size: 3rem;
+/* Títulos */
+h2 {
+  font-size: 2rem;
   font-weight: 700;
-  text-shadow: 0 0 15px rgba(0,0,0,0.8);
-  z-index: 10;
-  max-width: 90%;
-  text-align: center;
-  pointer-events: none;
-}
-
-/* Botones carrusel */
-.carousel button.prev,
-.carousel button.next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0,0,0,0.5);
-  border: none;
-  color: white;
-  font-size: 3rem;
-  padding: 0 14px;
-  cursor: pointer;
-  user-select: none;
-  z-index: 20;
-  border-radius: 50%;
-  transition: background-color 0.3s ease;
-}
-
-.carousel button.prev:hover,
-.carousel button.next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-.carousel button.prev {
-  left: 20px;
-}
-
-.carousel button.next {
-  right: 20px;
+  margin: 30px 0;
+  color: #1662d4;
 }
 
 /* Form Section */
@@ -134,9 +125,9 @@ header nav a:hover {
   max-width: 400px;
   margin: 40px auto;
   padding: 20px;
-  background-color:  #517ec1;
-  border-radius: 10px;
-  box-shadow: #3b495e;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .form-section form {
@@ -151,15 +142,15 @@ header nav a:hover {
 }
 
 .form-section select {
-  padding: 10px;
+  padding: 12px;
   border-radius: 8px;
-  border: none;
+  border: 1px solid #ddd;
   font-size: 1rem;
-  font-family: "Montserrat", sans-serif;
+  background-color: #f9f9f9;
 }
 
 .form-section button {
-  padding: 12px;
+  padding: 14px;
   background-color: #1662d4;
   color: white;
   font-weight: 700;
@@ -170,7 +161,7 @@ header nav a:hover {
 }
 
 .form-section button:hover {
-  background-color: #36444e;
+  background-color: #0d4ba0;
 }
 
 /* Regiones Section */
@@ -184,17 +175,18 @@ header nav a:hover {
 }
 
 .region {
-  background-color: #247287;
+  background-color: white;
   border-radius: 10px;
   width: 280px;
   text-align: center;
-  box-shadow: 0 0 10px rgba(35, 37, 47, 0.3);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
   padding: 15px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .region:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.15);
 }
 
 .region img {
@@ -207,6 +199,7 @@ header nav a:hover {
 .region h4 {
   font-weight: 700;
   font-size: 1.2rem;
+  color: #1662d4;
 }
 
 /* Footer */
@@ -214,66 +207,34 @@ footer {
   background-color: #236a91;
   text-align: center;
   padding: 20px 0;
-  color: #020404;
-  font-weight: 600;
+  color: white;
+  font-weight: 500;
 }
 
-/* Media Queries para responsive */
-@media (max-width: 900px) {
-  .hero {
-    height: 450px;
-  }
-  .carousel .slides {
-    height: 450px;
-  }
-  .carousel .slide {
-    height: 450px;
-  }
-  .carousel .slide h2 {
-    font-size: 2.5rem;
-  }
-}
-
+/* Responsive ajustes */
 @media (max-width: 600px) {
   header {
     flex-direction: column;
     align-items: flex-start;
-    height: auto;
     padding: 10px 16px;
   }
   header nav {
     width: 100%;
   }
   header nav a {
-    font-size: 18px;
-    padding: 10px 8px;
+    font-size: 16px;
+    padding: 8px;
     display: inline-block;
   }
-  .hero {
-    height: 300px;
-  }
-  .carousel .slides {
-    height: 300px;
-  }
-  .carousel .slide {
-    height: 300px;
-  }
-  .carousel .slide h2 {
-    font-size: 1.8rem;
-  }
-  .carousel button.prev,
-  .carousel button.next {
-    font-size: 2rem;
-    padding: 0 10px;
+  h2 {
+    font-size: 1.5rem;
   }
   .form-section article {
     max-width: 90%;
-    margin: 30px auto;
   }
   .regiones {
     flex-direction: column;
     gap: 15px;
-    padding: 0 10px;
   }
   .region {
     width: 100%;
