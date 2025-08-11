@@ -45,13 +45,26 @@
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
             <div class="carousel-inner">
+               <div class="carousel-item active">
+                  <img src="assets/img/iguazu1.png" class="d-block w-100" alt="Iguazú" />
+                  <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
+                    <h2 class="text-white text-shadow">Iguazú: Conocé la Maravilla Natural del Mundo</h2>
+                  </div>
+                </div>
+                <div class="carousel-inner">
+               <div class="carousel-item active">
+                  <img src="assets/img/sur.jpg" class="d-block w-100" alt="Sur" />
+                  <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
+                    <h2 class="text-white text-shadow">¿Team Invierno? Disfrutá Las Leñas</h2>
+                  </div>
+                </div>
                 <div class="carousel-item active">
-                    <img src="assets/img/iguazu1.png" class="d-block w-100" alt="1" />
+                  <img src="assets/img/resis.png" class="d-block w-100" alt="Sur" />
+                  <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
+                    <h2 class="text-white text-shadow">Turismo Cultural: Descubrí el arte en Resistencia</h2>
+                  </div>
                 </div>
-                
-                <div class="carousel-item">
-                    <img src="assets/img/sur.jpg" class="d-block w-100" alt="3" />
-                </div>
+            
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -69,22 +82,37 @@
 
 <section class="form-section">
     <article>
-        <h3>Personaliza tu búsqueda</h3>
+        <h3>Personalizá tu búsqueda: Comenzá aquí</h3>
         <form>
             <label for="mood">Tu mood:</label>
             <select id="mood">
                 <option>Relax</option>
                 <option>Aventura</option>
+                <option>Cultural</option>
+                <option>Familiar</option>
             </select>
 
-            <label for="presupuesto">Presupuesto:</label>
+            <label for="clima">Clima Deseado:</label>
+            <select id="clima">
+                <option>Frío</option>
+                <option>Templado</option>
+                <option>Calor</option>
+            </select>
+
+            <label for="presupuesto">Presupuesto Estimado:</label>
             <select id="presupuesto">
                 <option>Bajo</option>
                 <option>Medio</option>
                 <option>Alto</option>
             </select>
 
-            <button type="submit">Buscar</button>
+             <label for="duracion">Duracion del Viaje:</label>
+            <select id="duracion">
+                <option>Menos de 3 días</option>
+                <option>Entre 3-7 días</option>
+                <option>Más de 7 días</option>
+            </select>
+            <button type="submit">¡Buscar mi destino ideal!</button>
         </form>
     </article>
 </section>
