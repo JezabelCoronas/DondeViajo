@@ -20,7 +20,7 @@ Built with HTML5, CSS3, Bootstrap, and JavaScript.
 - Bootstrap 5
 
 ## Screenshots
-![Screenshot of DondeViajo](./img/screenshot.png)
+
 
 ## How to Use
 1. Clone the repository  
