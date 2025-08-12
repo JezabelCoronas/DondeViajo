@@ -26,3 +26,13 @@ Built with HTML5, CSS3, Bootstrap, and JavaScript.
 1. Clone the repository  
    ```bash
    git clone https://github.com/JezabelCoronas/DondeViajo.git
+
+ 2.Open index.html in your browser.
+
+Project Status
+🚧 In progress
+
+License
+This project is licensed under the MIT License.
+
+
