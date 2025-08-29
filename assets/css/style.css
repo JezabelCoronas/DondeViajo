@@ -84,6 +84,15 @@ header nav a:hover {
   border-radius: 6px;
 }
 
+
+.nav-link img {
+  width: 18px;
+  height: 18px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+
 /* Hero - Carrusel */
 .hero {
   max-width: 1100px;
